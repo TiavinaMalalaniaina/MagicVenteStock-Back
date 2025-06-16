@@ -1,4 +1,4 @@
-package com.kili.magicventestock.controlleur;
+package com.kili.magicventestock.metier.metierServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,11 +10,11 @@ import com.kili.magicventestock.metier.model.Produit;
 
 @RestController
 @RequestMapping("/produits")
-public class ProduitsControlleur {
+public class ProduitsServiceAPI {
     ProduitsManager produitsManager;
 
     @Autowired
-    public ProduitsControlleur(ProduitsManager produitsManager) {
+    public ProduitsServiceAPI(ProduitsManager produitsManager) {
         this.produitsManager = produitsManager;
     }
 

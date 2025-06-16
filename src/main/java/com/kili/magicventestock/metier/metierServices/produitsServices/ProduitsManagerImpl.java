@@ -17,6 +17,6 @@ public class ProduitsManagerImpl implements ProduitsManager {
     @Override
     public Produit rechercherProduitDujour() {
         return produitRepository.findByestDuJourTrue().orElse(null);    
-    }
+    } 
     
 }
