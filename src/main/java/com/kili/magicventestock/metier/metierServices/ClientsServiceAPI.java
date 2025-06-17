@@ -1,6 +1,7 @@
 package com.kili.magicventestock.metier.metierServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,7 @@ import com.kili.magicventestock.metier.model.ClientRequest;
 @RestController
 @RequestMapping("/clients")
 public class ClientsServiceAPI {
-    com.kili.magicventestock.metier.metierServices.clientsServices.ClientsManager clientsManager;
+    ClientsManager clientsManager;
 
     @Autowired
     public ClientsServiceAPI(ClientsManager clientsManager) {
@@ -21,6 +22,7 @@ public class ClientsServiceAPI {
     }
 
     @PostMapping("/identification")
+    @CrossOrigin(origins = "*")    
     public Client rechercherClientParPseudo(@RequestBody ClientRequest clientRequest) {
         return clientsManager.rechercherClientParPseudo(clientRequest.getPseudo(), clientRequest.getMotDePasse());
     }
